@@ -15,6 +15,8 @@ function addToCart(item) {
  return `${item} has been added to your cart.`;
 }
 
+var cart = [{'itemName':'Bananas','itemPrice':13},{'itemName':'Apples','itemPrice':25},{'itemName':'Grapes','itemPrice':30}]
+
 function viewCart() {
   var statement = `In your cart, you have`;
   if (cart.length===0) {
@@ -30,6 +32,7 @@ function viewCart() {
       }
     }
   }
+	return statement
 }
 
 function total() {
@@ -53,7 +56,7 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  if (cardNumber.length===0) {
+  if (cardNumber===undefined) {
     console.log("Sorry, we don't have a credit card on file for you.");
   } else {
     var value = total();
